@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{mathtools}
+\usepackage{parskip}
+
+\title{Determinante de uma Matriz 4x4}
+\author{Isabela Martins \hspace{0.1cm} Julia Molitzas}
+\date{11/05/2023}
+
+
+\begin{document}
+\maketitle
+
+\newpage
+
+\section{Fórmula:}
+
+Para calcular o determinante de uma Matriz 4x4: 
+
+\[
+\det(A) = \sum_{\sigma \in S_4} \left( \prod_{i=1}^{4} (-1)^{\mathrm{sgn}(\sigma)} a_{i\sigma(i)} \right)
+\]\newline
+
+\ {S}$_4$ = \{'1234', '1243', '1324', '1432', '1342', '1423', 
+'2134', '2143', '2314', '2431', '2413', '2341', 
+'3214', '3124', '3241', '3412', '3142', '3421', 
+'4231', '4132', '4213', '4321', '4123', '4312'\}\newline
+
+\begin{equation*}
+    \begin{split}
+    \det(A)=
+    \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1234')} a_{i'1234'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1243')} a_{i'1243'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1324')} a_{i'1324'(i)}\\
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1432')} a_{i'1432'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1342')} a_{i'1342'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('1423')} a_{i'1423'(i)}\\
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2134')} a_{i'2134'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2143')} a_{i'2143'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2314')} a_{i'2314'(i)}\\ 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2431')} a_{i'2431'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2413')} a_{i'2413'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('2341')} a_{i'2341'(i)}\\ 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3214')} a_{i'3214'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3124')} a_{i'3124'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3241')} a_{i'3241'(i)}\\
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3412')} a_{i'3412'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3142')} a_{i'3142'(i)} 
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('3421')} a_{i'3421'(i)}\\
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4231')} a_{i'4231'(i)}
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4132')} a_{i'4132'(i)}
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4213')} a_{i'4213'(i)}\\
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4321')} a_{i'4321'(i)}
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4123')} a_{i'4123'(i)}
+    + \prod_{i=1}^{4} (-1)^{\mathrm{sgn}('4312')} a_{i'4312'(i)}
+    \end{split}
+\end{equation*}
+
+
+
+\begin{equation*}
+    \begin{split}
+    = a_1{}_1.a_2{}_2.a_3{}_3.a_4{}_4 - a_1{}_1.a_2{}_2.a_3{}_4.a_4{}_3 - a_1{}_1.a_2{}_3.a_3{}_2.a_4{}_4 + a_1{}_1.a_2{}_3.a_3{}_4.a_4{}_2 - a_1{}_1.a_2{}_4.a_3{}_3.a_4{}_2\\
+    + a_1{}_1.a_2{}_4.a_3{}_2.a_4{}_3 - a_1{}_2.a_2{}_1.a_3{}_3.a_4{}_4 + a_1{}_2.a_2{}_1.a_3{}_4.a_4{}_3 + a_1{}_2.a_2{}_3.a_3{}_1.a_4{}_4 + a_1{}_2.a_2{}_4.a_3{}_3.a_4{}_1\\
+    - a_1{}_2.a_2{}_4.a_3{}_1.a_4{}_3 - a_1{}_2.a_2{}_3.a_3{}_4.a_4{}_1 - a_1{}_3.a_2{}_2.a_3{}_1.a_4{}_4 + a_1{}_3.a_2{}_1.a_3{}_2.a_4{}_4 + a_1{}_3.a_2{}_2.a_3{}_4.a_4{}_1\\
+    + a_1{}_3.a_2{}_4.a_3{}_1.a_4{}_2 - a_1{}_3.a_2{}_1.a_3{}_4.a_4{}_2 - a_1{}_3.a_2{}_4.a_3{}_2.a_4{}_1 - a_1{}_4.a_2{}_2.a_3{}_3.a_4{}_1 + a_1{}_4.a_2{}_1.a_3{}_3.a_4{}_2\\
+    + a_1{}_4.a_2{}_2.a_3{}_1.a_4{}_3 + a_1{}_4.a_2{}_3.a_3{}_2.a_4{}_1 - a_1{}_4.a_2{}_1.a_3{}_2.a_4{}_3 - a_1{}_4.a_2{}_3.a_3{}_1.a_4{}_2 
+    \end{split}
+\end{equation*}
+
+\section{Permutações:}
+
+\[ '1234' = 0 \hspace{1.5cm} '2134' = 1 \hspace{1.5cm} '3214' = 1 \hspace{1.5cm} '4231' = 1\] 
+\[ '1243' = 1 \hspace{1.5cm} '2143' = 2 \hspace{1.5cm} '3124' = 2 \hspace{1.5cm} '4132' = 2\] 
+\[ '1324' = 1 \hspace{1.5cm} '2314' = 2 \hspace{1.5cm} '3241' = 2 \hspace{1.5cm} '4213' = 2\] 
+\[ '1432' = 1 \hspace{1.5cm} '2431' = 2 \hspace{1.5cm} '3412' = 2 \hspace{1.5cm} '4321' = 2\]
+\[ '1342' = 2 \hspace{1.5cm} '2413' = 3 \hspace{1.5cm} '3142' = 3 \hspace{1.5cm} '4123' = 3\] 
+\[ '1423' = 2 \hspace{1.5cm} '2341' = 3 \hspace{1.5cm} '3421' = 3 \hspace{1.5cm} '4312' = 3\]\newline 
+
+\section {Exercícios:}
+
+1. Determinante de uma matriz 4x4 com resultado 0:\newline
+
+\[
+A = 
+\left[
+    \begin{array}{cccc}
+        1 & 2 & 3 & 4 \\
+        2 & 4 & 6 & 8 \\
+        3 & 6 & 9 & 12\\
+        4 & 8 & 12 & 16\\
+    \end{array}
+\right]
+\]
+
+\begin{equation*}
+\begin{split}
+    A = 1.4.9.16 - 1.4.12.12 - 1.6.6.16 + 1.6.12.8 - 1.8.9.8 + 1.8.6.12\\ 
+    - 2.2.9.16 + 2.2.12.12 + 2.6.3.16 + 2.8.9.4- 2.8.3.12 - 2.6.12.4\\
+    - 3.4.3.16 + 3.2.6.16 + 3.4.12.4 + 3.8.3.8 - 3.2.12.8 - 3.8.6.4\\ 
+    - 4.4.9.4 + 4.2.9.8 + 4.4.3.12 + 4.6.6.4 - 4.2.6.12 - 4.6.3.8
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+\begin{split}
+    A = 576 - 576 - 576 + 576 - 576 + 576 - 576 + 576 + 576 + 576 - 576 - 576\\
+    - 576 + 576 + 576 + 576 - 576 - 576 - 576 + 576 + 576 + 576 - 576 - 576 
+\end{split}
+\end{equation*}
+
+\[
+A = 0
+\]
+
+\newpage
+
+2. Determinate de uma matriz 4x4 com resultado diferente de 0:\newline
+
+\[
+A = 
+\left[
+    \begin{array}{cccc}
+        1 & 0 & 0 & 0 \\
+        0 & 1 & 0 & 0 \\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+    \end{array}
+\right]
+\]
+
+\begin{equation*}
+    \begin{split}   
+    A = 1.1.1.1 - 1.1.0.0 - 1.0.0.1 + 1.0.0.0 - 1.0.0.0 + 1.0.0.0\\
+    - 0.0.1.1 + 0.0.0.0 + 0.0.0.1 + 0.0.1.0 - 0.0.0.0  - 0.0.0.0\\
+    - 0.1.0.1 + 0.0.0.1 + 0.1.0.0 + 0.0.0.0 - 0.0.0.0 - 0.0.0.0\\
+    - 0.1.1.0 + 0.0.1.0 + 0.1.0.0 + 0.0.0.0 - 0.0.0.0 -0.0.0.0
+\end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split} 
+    A =  1 - 0 - 0 + 0 - 0 + 0\\ 
+    - 0 + 0 + 0 + 0 - 0 - 0\\
+    - 0 + 0 + 0 + 0 - 0 - 0\\
+    - 0 + 0 + 0 + 0 - 0 - 0 
+\end{split}
+\end{equation*}
+
+\[
+A = 1  
+\]
+
+
+
+
+
+
+\end{document}
